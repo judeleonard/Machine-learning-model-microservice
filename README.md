@@ -33,7 +33,7 @@ The API predict endpoint recieves a json object that contains a customer's infor
                     
 #### Make post request to predict end point
             import requests
-            response = requests.post('https://ml-model-ms.herokuapp.com/predict', json=new_data)
+            response = requests.post('https://ml-model-ms.herokuapp.com/predict', json=customer_data)
             print(response.content)
             
 #### prediction output
