@@ -14,6 +14,7 @@ The API predict endpoint recieves a json object that contains a customer's infor
 ## Testing the API by calling it externally over https
 #### Supply a Json object containing data
 
+```json
         customer_data =  {
                       "age": 30,
                       "job": "unemployed",
@@ -30,15 +31,17 @@ The API predict endpoint recieves a json object that contains a customer's infor
                       "previous": 0,
                       "poutcome": "unkown"
                     }
-                    
+```                    
 #### Make post request to predict end point
+```python
             import requests
             response = requests.post('https://ml-model-ms.herokuapp.com/predict', json=customer_data)
             print(response.content)
-            
+```   
 #### prediction output
+```python
         b'{"prediction":["No"],"probability":0.6121217836623571}'
-
+```
 #### [See this repository for how this model microservice was integrated and consuming data via a data polling system](https://github.com/judeleonard/Kafka-Streaming-Pipeline)
         
 ## Other things we can try
