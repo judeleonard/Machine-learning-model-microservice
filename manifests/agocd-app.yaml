@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bank-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/judeleonard/Machine-learning-model-microservice.git' 
+    targetRevision: dev
+    path: manifests 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
