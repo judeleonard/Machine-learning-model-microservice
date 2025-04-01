@@ -4,11 +4,10 @@ metadata:
   name: bank-app-service
   namespace: default
 spec:
-  type: NodePort
   selector:
     app: bank-app
   ports:
     - protocol: TCP
-      port: 10208
-      targetPort: 10208
-      nodePort: 31234  
+      port: 80   
+      targetPort: 8082
+  type: NodePort   

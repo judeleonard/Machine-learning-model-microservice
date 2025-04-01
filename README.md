@@ -44,5 +44,17 @@ The API predict endpoint recieves a json object that contains a customer's infor
 ```
 #### [See this repository for how this model microservice was integrated and consuming data via a data polling system](https://github.com/judeleonard/Kafka-Streaming-Pipeline)
         
+
+# Deploy API to kubernetes Cluster
+
+### Test predict endpoint running on kubernetes cluster via external ip
+
+![]("./images/external-api-IP.png")
+
+### Kubernetes Pods status
+
+![]("./images/k8s-cluster.png") 
+
+
 ## Other things we can try
 There are cases the model might be so large that we cannot have that uploaded to a respository or perhaps we need additional security. We can have this model uploaded to any cloud storage like GCP or S3 bucket, and we can call this model service using the generated access credentials. Feel free to test this api or ask me any question, would be glad to help. 

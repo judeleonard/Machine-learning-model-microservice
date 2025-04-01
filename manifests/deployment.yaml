@@ -15,17 +15,18 @@ spec:
     spec:
       containers:
         - name: bank-app
-          image: localhost:5000/machine-learning-model-microservice_app:latest
-
+          image: bank-app:latest 
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 10208
+            - containerPort: 8082
           volumeMounts:
             - name: model
               mountPath: /bank-app/src/model
+      restartPolicy: Always
           # resources:
           #   limits:
           #     nvidia.com/gpu: 1 
       volumes:
         - name: model
           hostPath:
-            path: /home/dell/Machine-learning-model-microservice/model 
+            path: /home/dell/Machine-learning-model-microservice/model
