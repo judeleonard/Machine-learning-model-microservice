@@ -49,11 +49,11 @@ The API predict endpoint recieves a json object that contains a customer's infor
 
 ### Test predict endpoint running on kubernetes cluster via external ip
 
-![]("./images/external-api-IP.png")
+![](./images/external-api-IP.png)
 
 ### Kubernetes Pods status
 
-![]("./images/k8s-cluster.png") 
+![](./images/k8s-cluster.png) 
 
 
 ## Other things we can try
