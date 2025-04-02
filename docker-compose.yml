@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: bank-app
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./model:/bank-app/model

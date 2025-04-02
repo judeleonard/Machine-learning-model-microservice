@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bank-app
+  template:
+    metadata:
+      labels:
+        app: bank-app
+    spec:
+      containers:
+        - name: bank-app
+          image: bank-app:latest 
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
+          volumeMounts:
+            - name: model
+              mountPath: /bank-app/src/model
+      restartPolicy: Always
+          # resources:
+          #   limits:
+          #     nvidia.com/gpu: 1 
+      volumes:
+        - name: model
+          hostPath:
+            path: /home/dell/Machine-learning-model-microservice/model
