@@ -1,28 +1,11 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import uvicorn
 import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from schema import CustomerModel
 
 app = FastAPI()
-
-class CustomerModel(BaseModel):
-    age: int
-    job: str
-    marital: str
-    education: str
-    default: str
-    balance: int
-    housing: str
-    loan: str
-    day: int
-    duration: int
-    campaign: int
-    pdays: int
-    previous: int
-    poutcome: str
-
 
 # Defining root endpoint
 @app.get("/", tags=["Root"])
