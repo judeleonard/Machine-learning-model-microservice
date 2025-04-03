@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-
 class CustomerModel(BaseModel):
     age: int
     job: str
